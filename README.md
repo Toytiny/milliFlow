@@ -12,7 +12,7 @@ This work presents **milliFlow**, a scene flow estimation module to provide an a
 <br/>
 [Fangqiang Ding](https://toytiny.github.io/), [Zhen Luo](https://www.researchgate.net/profile/Zhen-Luo-32), [Peijun Zhao](https://scholar.google.com/citations?user=et397zMAAAAJ&hl=en), [Chris Xiaoxuan Lu](https://christopherlu.github.io/)
 <br/>
-[[arXiv]](https://arxiv.org/pdf/2303.00462.pdf) [[demo]](https://youtu.be/PjKgznDizhI) [[page]](https://toytiny.github.io/publication/23-cmflow-cvpr/index.html) [[supp]](https://openaccess.thecvf.com/content/CVPR2023/supplemental/Ding_Hidden_Gems_4D_CVPR_2023_supplemental.pdf)  [[video]](https://youtu.be/hHgzBhy6NVQ)
+[[arXiv]](https://arxiv.org/pdf/2306.17010) 
 
 
 Our code, dataset and model will be released later! 
