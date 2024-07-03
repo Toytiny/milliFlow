@@ -1,15 +1,17 @@
-<div align="left">
-<h2>milliFlow: Scene Flow Estimation on mmWave Radar Point Cloud for Human Motion Sensing</h2>
+<div align="center">   
 
-[**Fangqiang Ding**](https://toytiny.github.io/)<sup>1</sup> · [**Zhen Luo**](https://scholar.google.com/citations?user=NmHgX-wAAAAJ)<sup>2&dagger;</sup> · [**Peijun Zhao**](http://speedinghzl.github.io/)<sup>2</sup> · [**Chris Xiaoxuan Lu**](https://xiaogang00.github.io/)<sup>3,4</sup> 
-
-<sup>1</sup>HKU&emsp;&emsp;&emsp;&emsp;<sup>2</sup>TikTok&emsp;&emsp;&emsp;&emsp;<sup>3</sup>CUHK&emsp;&emsp;&emsp;&emsp;<sup>4</sup>ZJU
-
-&dagger;project lead&emsp;*corresponding author
-
-**CVPR 2024**
+# milliFlow: Scene Flow Estimation on mmWave Radar Point Cloud for Human Motion Sensing
+</div>
+[![arXiv](https://img.shields.io/badge/arXiv-2306.17010-b31b1b.svg)](https://arxiv.org/abs/2306.17010)
 
 This work presents milliFlow, a scene flow estimation module to provide an additional layer of point-wise motion information on top of the original mmWave radar point cloud in the conventional mmWave-based human motion sensing pipeline.
+
+**milliFlow: Scene Flow Estimation on mmWave Radar Point Cloud for Human Motion Sensing**
+<br/>
+[Fangqiang Ding](https://toytiny.github.io/), [Zhen Luo](https://www.researchgate.net/profile/Zhen-Luo-32), [Peijun Zhao](https://scholar.google.com/citations?user=et397zMAAAAJ&hl=en), [Chris Xiaoxuan Lu](https://christopherlu.github.io/)
+<br/>
+[[arXiv]](https://arxiv.org/pdf/2303.00462.pdf) [[demo]](https://youtu.be/PjKgznDizhI) [[page]](https://toytiny.github.io/publication/23-cmflow-cvpr/index.html) [[supp]](https://openaccess.thecvf.com/content/CVPR2023/supplemental/Ding_Hidden_Gems_4D_CVPR_2023_supplemental.pdf)  [[video]](https://youtu.be/hHgzBhy6NVQ)
+
 
 Our code, dataset and model will be released later! 
 
