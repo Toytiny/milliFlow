@@ -1,7 +1,7 @@
-<div align="center">
+<div align="left">
 <h2>milliFlow: Scene Flow Estimation on mmWave Radar Point Cloud for Human Motion Sensing</h2>
 
-[**Lihe Yang**](https://liheyoung.github.io/)<sup>1</sup> · [**Bingyi Kang**](https://scholar.google.com/citations?user=NmHgX-wAAAAJ)<sup>2&dagger;</sup> · [**Zilong Huang**](http://speedinghzl.github.io/)<sup>2</sup> · [**Xiaogang Xu**](https://xiaogang00.github.io/)<sup>3,4</sup> · [**Jiashi Feng**](https://sites.google.com/site/jshfeng/)<sup>2</sup> · [**Hengshuang Zhao**](https://hszhao.github.io/)<sup>1*</sup>
+[**Fangqiang Ding**](https://toytiny.github.io/)<sup>1</sup> · [**Zhen Luo**](https://scholar.google.com/citations?user=NmHgX-wAAAAJ)<sup>2&dagger;</sup> · [**Peijun Zhao**](http://speedinghzl.github.io/)<sup>2</sup> · [**Chris Xiaoxuan Lu**](https://xiaogang00.github.io/)<sup>3,4</sup> 
 
 <sup>1</sup>HKU&emsp;&emsp;&emsp;&emsp;<sup>2</sup>TikTok&emsp;&emsp;&emsp;&emsp;<sup>3</sup>CUHK&emsp;&emsp;&emsp;&emsp;<sup>4</sup>ZJU
 
