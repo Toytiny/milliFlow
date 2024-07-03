@@ -6,7 +6,7 @@
 [![arXiv](https://img.shields.io/badge/arXiv-2306.17010-b31b1b.svg)](https://arxiv.org/abs/2306.17010)
 
 
-This work presents **milliFlow**, a scene flow estimation module to provide an additional layer of point-wise motion information on top of the original mmWave radar point cloud in the conventional mmWave-based human motion sensing pipeline. For technical details, please refer to our paper on CVPR 2023:
+This work presents **milliFlow**, a scene flow estimation module to provide an additional layer of point-wise motion information on top of the original mmWave radar point cloud in the conventional mmWave-based human motion sensing pipeline. For technical details, please refer to our paper on ECCV 2024:
 
 **milliFlow: Scene Flow Estimation on mmWave Radar Point Cloud for Human Motion Sensing**
 <br/>
