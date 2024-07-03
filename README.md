@@ -26,7 +26,7 @@ Our code, dataset and model will be released later!
  - [2024-07-01] Our paper is accepted by 🎉[ECCV 2024](https://eccv2024.ecva.net/).
    
 ## Citation
-If you find our work useful in your research, please consider citing:
+When using the code, model, or dataset, please cite the following paper:
 
 
 ```shell
@@ -38,3 +38,15 @@ If you find our work useful in your research, please consider citing:
     pages     = {1-14}
 }
 ```
+
+## License
+
+### Code and Model License
+
+The code and model provided in this repository are licensed under the MIT License. See the [LICENSE-CODE](LICENSE-CODE) file for details.
+
+### Dataset License
+
+The dataset provided in this repository is licensed under the Creative Commons Attribution 4.0 International (CC BY 4.0) License. See the [LICENSE-DATA](LICENSE-DATA) file for details.
+
+
