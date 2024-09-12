@@ -3,22 +3,22 @@
 # milliFlow: Scene Flow Estimation on mmWave Radar Point Cloud for Human Motion Sensing
 </div>
 
-[![arXiv](https://img.shields.io/badge/arXiv-2306.17010-b31b1b.svg)](https://arxiv.org/abs/2306.17010) 
-[![Youtube](https://img.shields.io/youtube/views/fa91EeueGHA?label=Video&style=flat)](https://www.youtube.com/watch?v=fa91EeueGHA&feature=youtu.be) 
-[![License: CC BY-NC 4.0](https://github.com/Toytiny/milliFlow/blob/main/src/by-nc.svg)](https://creativecommons.org/licenses/by-nc/4.0/)
+[![Static Badge](https://img.shields.io/badge/milliFlow-arXiv-green)](https://arxiv.org/abs/2306.17010) 
+[![YouTube](https://badges.aleen42.com/src/youtube.svg)](https://youtu.be/fa91EeueGHA)
+[![License: CC BY-NC 4.0](https://img.shields.io/badge/License-CC_BY--NC_4.0-lightblue.svg)](https://creativecommons.org/licenses/by-nc/4.0/)
 
 
 <p align="left">
 <img src='./src/open_figure.png' width="500">
 </p>
 
-This work presents **milliFlow**, a scene flow estimation module to provide an additional layer of point-wise motion information on top of the original mmWave radar point cloud in the conventional mmWave-based human motion sensing pipeline. For technical details, please refer to our paper on ECCV 2024:
+This work presents **milliFlow**, a scene flow estimation module to provide an additional layer of **point-wise motion information** on top of the original mmWave radar point cloud in the conventional mmWave-based **human motion sensing** pipeline. For technical details, please refer to our paper on ECCV 2024:
 
 **milliFlow: Scene Flow Estimation on mmWave Radar Point Cloud for Human Motion Sensing**
 <br/>
 [Fangqiang Ding](https://toytiny.github.io/), [Zhen Luo](https://www.researchgate.net/profile/Zhen-Luo-32), [Peijun Zhao](https://scholar.google.com/citations?user=et397zMAAAAJ&hl=en), [Chris Xiaoxuan Lu](https://christopherlu.github.io/)
 <br/>
-[[arXiv]](https://arxiv.org/pdf/2306.17010) 
+[[arXiv]](https://arxiv.org/pdf/2306.17010) [[video]](https://arxiv.org/pdf/2306.17010) [[poster]](./src/poster_eccv24_milliFlow.pdf) 
 
 
 Our code, dataset and model will be released later! 
@@ -26,6 +26,7 @@ Our code, dataset and model will be released later!
 ## News
  - [2024-03-15] Our preprint paper is available on 👉[arXiv](https://arxiv.org/pdf/2306.17010).
  - [2024-07-01] Our paper is accepted by 🎉[ECCV 2024](https://eccv2024.ecva.net/).
+ - [2024-09-12] Our presentation video and poster is online. Please check them out 👉[video](https://arxiv.org/pdf/2306.17010) | [poster](./src/poster_eccv24_milliFlow.pdf) 
    
 ## Citation
 When using the code, model, or dataset, please cite the following paper:
