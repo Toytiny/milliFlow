@@ -5,7 +5,6 @@
 
 [![arXiv](https://img.shields.io/badge/arXiv-2306.17010-b31b1b.svg)](https://arxiv.org/abs/2306.17010) 
 [![Youtube](https://img.shields.io/youtube/views/fa91EeueGHA?label=Video&style=flat)](https://www.youtube.com/watch?v=fa91EeueGHA&feature=youtu.be) 
-[![code license](https://img.shields.io/badge/license-MIT-green.svg)](https://github.com/Toytiny/milliFlow/blob/main/LICENSE-CODE)  
 [![License: CC BY-NC 4.0](https://github.com/Toytiny/milliFlow/blob/main/src/by-nc.svg)](https://creativecommons.org/licenses/by-nc/4.0/)
 
 
@@ -46,10 +45,11 @@ When using the code, model, or dataset, please cite the following paper:
 
 ### Code and Model License
 
-The code and model provided in this repository are licensed under the MIT License. See the [LICENSE-CODE](LICENSE-CODE) file for details.
+The code and model provided in this repository are licensed under the Creative Commons Attribution-NonCommercial 4.0 International License (CC BY-NC 4.0). See the [LICENSE](LICENSE) file for details.
+
 
 ### Dataset License
 
-The dataset provided in this repository is licensed under the Creative Commons Attribution-NonCommercial 4.0 International License (CC BY-NC 4.0). See the [LICENSE-DATA](LICENSE-DATA) file for details.
+The dataset provided in this repository is licensed under the Creative Commons Attribution-NonCommercial 4.0 International License (CC BY-NC 4.0). See the [LICENSE](LICENSE) file for details.
 
 
