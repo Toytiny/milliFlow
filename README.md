@@ -3,9 +3,9 @@
 # milliFlow: Scene Flow Estimation on mmWave Radar Point Cloud for Human Motion Sensing
 </div>
 
-[![Static Badge](https://img.shields.io/badge/milliFlow-arXiv-green)](https://arxiv.org/abs/2306.17010) 
+[![Static Badge](https://img.shields.io/badge/milliFlow-arXiv-blue)](https://arxiv.org/abs/2306.17010) 
 [![YouTube](https://badges.aleen42.com/src/youtube.svg)](https://youtu.be/fa91EeueGHA)
-[![License: CC BY-NC 4.0](https://img.shields.io/badge/License-CC_BY--NC_4.0-lightblue.svg)](https://creativecommons.org/licenses/by-nc/4.0/)
+[![License: CC BY-NC 4.0](https://img.shields.io/badge/License-CC_BY--NC_4.0-green.svg)](https://creativecommons.org/licenses/by-nc/4.0/)
 
 
 <p align="left">
