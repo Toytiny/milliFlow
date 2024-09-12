@@ -5,8 +5,8 @@
 
 [![arXiv](https://img.shields.io/badge/arXiv-2306.17010-b31b1b.svg)](https://arxiv.org/abs/2306.17010) 
 [![Youtube](https://img.shields.io/youtube/views/fa91EeueGHA?label=Video&style=flat)](https://www.youtube.com/watch?v=fa91EeueGHA&feature=youtu.be) 
-[![code license](https://img.shields.io/badge/license-MIT-green.svg)](https://github.com/Toytiny/milliFlow/blob/master/LICENSE-CODE)  
-[![License: CC BY-NC 4.0](https://github.com/Toytiny/milliFlow/blob/master/src/by-nc.svg)](https://creativecommons.org/licenses/by-nc/4.0/)
+[![code license](https://img.shields.io/badge/license-MIT-green.svg)](https://github.com/Toytiny/milliFlow/blob/main/LICENSE-CODE)  
+[![License: CC BY-NC 4.0](https://github.com/Toytiny/milliFlow/blob/main/src/by-nc.svg)](https://creativecommons.org/licenses/by-nc/4.0/)
 
 
 <p align="left">
