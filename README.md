@@ -29,7 +29,7 @@ Our code, dataset and model will be released later!
  - [2024-09-12] Our presentation video and poster is online. Please check them out 👉[video](https://youtu.be/fa91EeueGHA) | [poster](./src/poster_eccv24_milliFlow.pdf) 
 
 ## Data
-You can download the dataset [here](https://drive.google.com/file/d/19U-tXv505CvnaQ0EFR8ZqH-TatEiHe8P/view?usp=sharing)
+You can download the dataset [here](https://drive.google.com/file/d/19U-tXv505CvnaQ0EFR8ZqH-TatEiHe8P/view?usp=sharing).
    
 ## Citation
 When using the code, model, or dataset, please cite the following paper:
