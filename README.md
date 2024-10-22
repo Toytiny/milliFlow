@@ -30,6 +30,9 @@ Our code, dataset and model will be released later!
 
 ## Data
 You can download the dataset [here](https://drive.google.com/file/d/19U-tXv505CvnaQ0EFR8ZqH-TatEiHe8P/view?usp=sharing).
+
+## Getting Started
+To find out how to run our scodes, please see our intructions in GETTING_STARTED, which will be made by the end of October. Stay tuned for update! 
    
 ## Citation
 When using the code, model, or dataset, please cite the following paper:
