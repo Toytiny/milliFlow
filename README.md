@@ -4,7 +4,7 @@
 </div>
 
 [![Static Badge](https://img.shields.io/badge/arXiv-PDF-green?style=flat&logo=arXiv&logoColor=green)](https://arxiv.org/abs/2306.17010) 
-[![YouTube](https://badges.aleen42.com/src/youtube.svg)](https://youtu.be/fa91EeueGHA)
+[![YouTube Badge](https://img.shields.io/badge/YouTube-Watch-red?style=flat-square&logo=youtube)](https://www.youtube.com/watch?v=fa91EeueGHA)
 [![License: CC BY-NC 4.0](https://img.shields.io/badge/License-CC_BY--NC_4.0-blue.svg)](https://creativecommons.org/licenses/by-nc/4.0/)
 
 
