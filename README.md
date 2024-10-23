@@ -7,7 +7,6 @@
 [![YouTube Badge](https://img.shields.io/badge/YouTube-Watch-red?style=flat-square&logo=youtube)](https://www.youtube.com/watch?v=fa91EeueGHA)
 [![License: CC BY-NC 4.0](https://img.shields.io/badge/License-CC_BY--NC_4.0-blue.svg)](https://creativecommons.org/licenses/by-nc/4.0/)
 
-
 <p align="left">
 <img src='./src/open_figure.png' width="500">
 </p>
@@ -20,8 +19,6 @@ This work presents **milliFlow**, a scene flow estimation module to provide an a
 <br/>
 [[arXiv]](https://arxiv.org/pdf/2306.17010) [[video]](https://youtu.be/fa91EeueGHA) [[poster]](./src/poster_eccv24_milliFlow.pdf) 
 
-
-Our code, dataset and model will be released later! 
 
 ## News
  - [2024-03-15] Our preprint paper is available on 👉[arXiv](https://arxiv.org/pdf/2306.17010).
