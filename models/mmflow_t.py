@@ -132,9 +132,10 @@ class MMFlow_T(nn.Module):
         final_features, gfeat = self.Backbone(pc1,pc2,feature1,feature2, gfeat_prev)
         
         # predict initial scene flow and classfication map
-        output = self.fp(final_features)
-        pred_f = torch.clamp(output, -0.1, 0.1)
-    
+        output = self.fp(final_features) - pc1
+        # pred_f = torch.clamp(output, -0.1, 0.1)
+        pred_f = output.clamp(-0.1, 0.1).detach() + output - output.detach()
+
         return pred_f, gfeat
     
     
@@ -155,9 +156,17 @@ class Attention(nn.Module):
         return F.softmax(attention, dim=1)
 
 if __name__ == '__main__':
-    data1 = torch.randn(1,3,128)
-    data2 = torch.randn(1,3,128)
-    data3 = torch.randn(1,3,128)
-    data4 = torch.randn(1,3,128)
+    data1 = torch.randn(1,3,128).cuda()
+    data2 = torch.randn(1,3,128).cuda()
+    data3 = torch.randn(1,3,128).cuda()
+    data4 = torch.randn(1,3,128).cuda()
     m = MMFlow_T()
-    m(data1,data2,data3,data4)
+    device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
+    m.to(device)
+    m(data1,data2,data3,data4, None)
+
+    # data1 = torch.randn(4,256,128).cuda()
+    # m = Attention(256, 128)
+    # device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
+    # m.to(device)
+    # m(data1)
