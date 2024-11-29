@@ -25,11 +25,8 @@ This work presents **milliFlow**, a scene flow estimation module to provide an a
  - [2024-07-01] Our paper is accepted by 🎉[ECCV 2024](https://eccv2024.ecva.net/).
  - [2024-09-12] Our presentation video and poster is online. Please check them out 👉[video](https://youtu.be/fa91EeueGHA) | [poster](./src/poster_eccv24_milliFlow.pdf) 
 
-## Data
-You can download the dataset [here](https://drive.google.com/file/d/19U-tXv505CvnaQ0EFR8ZqH-TatEiHe8P/view?usp=sharing).
-
 ## Getting Started
-To find out how to run our scodes, please see our intructions in GETTING_STARTED(./src/GETTING_STARTED.md)
+To find out how to run our scodes, please see our intructions in [GETTING_STARTED](./src/GETTING_STARTED.md)
    
 ## Citation
 When using the code, model, or dataset, please cite the following paper:
