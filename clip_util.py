@@ -15,6 +15,7 @@ import torch.optim as optim
 from torch.optim.lr_scheduler import MultiStepLR, StepLR
 import torch.nn as nn
 import math
+import json
 
 def train_one_epoch_seq_action(args, net, train_loader, opt):
     total_loss = 0
@@ -289,7 +290,7 @@ def train_one_epoch_seq(args, net, train_loader, opt):
         
         for j in range(0, seq_len):
             ## reading data from dataloader and transform their format
-            pc1, pc2, ft1, ft2, flow_label = extract_data_info_clip(data, j)
+            pc1, pc2, ft1, ft2, flow_label, mask = extract_data_info_clip(data, j)
 
             batch_size = pc1.size(0)
             opt.zero_grad()
@@ -301,7 +302,7 @@ def train_one_epoch_seq(args, net, train_loader, opt):
                 else:
                     gfeat = gfeat.detach()
                     pred_f, gfeat = net(pc1, pc2, ft1, ft2, gfeat)
-                loss, items = mmflowLoss(pred_f.transpose(2, 1), flow_label, pc1.transpose(2, 1))
+                loss, items = mmflowLoss(pred_f.transpose(2, 1), flow_label, pc1.transpose(2, 1), mask)
 
             loss.backward()
             opt.step()
@@ -335,19 +336,20 @@ def extract_data_info_clip2(seq_data, idx):
     return pc1, pc2, ft1, ft2, gt, action_label, pos_label, skeleton
 
 def extract_data_info_clip(seq_data, idx):
-    pc1, pc2, ft1, ft2, gt = seq_data
+    pc1, pc2, ft1, ft2, gt, mask = seq_data
     pc1 = pc1[:, idx].cuda().transpose(2, 1).contiguous()
     pc2 = pc2[:, idx].cuda().transpose(2, 1).contiguous()
     ft1 = ft1[:, idx].cuda().transpose(2, 1).contiguous()
     ft2 = ft2[:, idx].cuda().transpose(2, 1).contiguous()
     gt = gt[:, idx].cuda().contiguous()
+    mask = mask[:, idx].cuda().contiguous()
     # pos_label = pos_label[:, idx].cuda().contiguous().long()
     # skeleton = skeleton[:, idx].cuda().transpose(2, 1).float()
 
-    return pc1, pc2, ft1, ft2, gt
+    return pc1, pc2, ft1, ft2, gt, mask.squeeze()
 
 def extract_data_info_test(data):
-    pc1, pc2, ft1, ft2, gt = data
+    pc1, pc2, ft1, ft2, gt,_ = data
     pc1 = pc1.cuda().transpose(2, 1).contiguous()
     pc2 = pc2.cuda().transpose(2, 1).contiguous()
     ft1 = ft1.cuda().transpose(2, 1).contiguous()
@@ -376,7 +378,7 @@ def eval_one_epoch_seq(args, net, eval_loader, textio):
             # use sequence data in order
             for j in range(0, seq_len):
                 ## reading data from dataloader and transform their format
-                pc1, pc2, ft1, ft2, flow_label = extract_data_info_clip(data, j)
+                pc1, pc2, ft1, ft2, flow_label, _ = extract_data_info_clip(data, j)
                 batch_size = pc1.shape[0]
 
                 if args.model in ['mmflow']:
@@ -444,7 +446,7 @@ def test_one_epoch_seq(args, net, test_loader, textio):
             ## reading data from dataloader and transform their format
             pc1, pc2, ft1, ft2, gt = extract_data_info_test(data)
 
-            if args.model in ['mmflow_t']:
+            if args.model in ['mmflow']:
                 # if i==clips_st_index[num_clip]:
                 if i == clips_st_index[num_clip] or i % seq_len == 0:
                     pred_f, gfeat = net(pc1, pc2, ft1, ft2, None)
@@ -479,16 +481,12 @@ def test_one_epoch_seq(args, net, test_loader, textio):
                         os.makedirs(seq_res_path)
                     res_path = os.path.join(seq_res_path, '{}.json'.format(num_pcs))
 
-                ujson.dump(res, open(res_path, "w"))
+                json.dump(res, open(res_path, "w"))
 
             ## evaluate the estimated results using ground truth
-            batch_res = eval_scene_flow(pc1, pred_f.transpose(2, 1).contiguous(), gt, args)
+            batch_res = eval_scene_flow(pc1.transpose(2, 1), pred_f.transpose(2, 1).contiguous(), gt, args)
             for metric in sf_metric:
                 sf_metric[metric] += batch_res[metric]
-
-            epe_xyz['x'].append(batch_res['epe_x'])
-            epe_xyz['y'].append(batch_res['epe_y'])
-            epe_xyz['z'].append(batch_res['epe_z'])
 
             num_pcs += 1
 
