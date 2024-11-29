@@ -1,0 +1,9 @@
+tqdm
+pyyaml
+ujson
+scipy
+open3d
+h5py
+matplotlib
+vod-tudelft
+opencv-python
