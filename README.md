@@ -29,7 +29,7 @@ This work presents **milliFlow**, a scene flow estimation module to provide an a
 You can download the dataset [here](https://drive.google.com/file/d/19U-tXv505CvnaQ0EFR8ZqH-TatEiHe8P/view?usp=sharing).
 
 ## Getting Started
-To find out how to run our scodes, please see our intructions in GETTING_STARTED, which will be made by the end of October. Stay tuned for update! 
+To find out how to run our scodes, please see our intructions in GETTING_STARTED(./src/GETTING_STARTED.md)
    
 ## Citation
 When using the code, model, or dataset, please cite the following paper:
