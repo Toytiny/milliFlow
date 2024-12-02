@@ -17,7 +17,7 @@ seed: 1234
 num_workers: 8
 
 ## dataset
-eval: True
+eval: False
 eval_split: val
 val_split: test
 dataset: ClipDataset # ClipDataset
@@ -40,7 +40,7 @@ mini_clip_len: 5
 update_len: 5
 
 ## checkpoint
-load_checkpoint: True
+load_checkpoint: False
 model_path: '' #'/home/luozhen/RadarFlow/checkpoints/mmflow/models/model.best.t7'
 joint_train: False
 
