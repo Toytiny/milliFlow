@@ -10,6 +10,8 @@
 </br>
 [2. Model Training](#2-model-training)
 </br>
+[3. Model Evaluation](#3-model-evaluation)
+</br>
 
 
 ## 0. Data Download
@@ -55,3 +57,10 @@ python main.py --dataset_path $DATA_PATH$ --exp_name $EXP_NAME$  --model mmflow 
 ```
 
 Here, `$DATA_PATH$` is the path where you save your preprocessed scene flow samples. `EXP_NAME` is the name of the current experiment defined by yourself. Training logs and results will be saved under `checkpoints/$EXP_NAME$/`. Besides, you can also modify training args, such as batch size, learning rate and number of epochs, by editing the configuration file `configs.yaml`.
+
+## 3. Model Evaluation
+We provide our trained models  in checkpoints/. You can evaluate our trained models or models trained by yourself.
+To evaluate the trained models on the test set, please run:
+```
+python main.py --eval --dataset_path $DATA_PATH$ --exp_name $EXP_NAME$  --model mmflow --dataset ClipDataset 
+```
