@@ -127,50 +127,21 @@ def eval_scene_flow(pc, pred, labels, args):
     #pred += pc   
     
     gt_f = labels-pc
-    dis = torch.norm(gt_f, dim=2)
-    move_idx = torch.nonzero((dis>0.1), as_tuple=False) #
-    #move_idx = torch.nonzero((gt_f[0]>=0.005), as_tuple=False)
-    move_pred = torch.index_select(pred, dim=1, index = move_idx[:, 0])
-    move_gt = torch.index_select(labels, dim=1, index = move_idx[:, 0])
-    move_error = np.sqrt(np.sum((move_pred.cpu().numpy() - move_gt.cpu().numpy()) ** 2, 2) + 1e-20)
-    if move_error.size == 0:
-        move_epe =0
-    else: move_epe = np.mean(move_error)/10
-    #move_epe = np.mean(np.sqrt(np.sum((move_pred.cpu().numpy() - move_gt.cpu().numpy()) ** 2, 2) + 1e-20))
-    
-    #static_epe
-    #static_idx = torch.nonzero((gt_f[0]==0), as_tuple=False)
-    static_idx = torch.nonzero((dis<=0.1), as_tuple=False)
-    static_pred = torch.index_select(pred, dim=1, index = static_idx[:, 0])
-    static_gt = torch.index_select(labels, dim=1, index = static_idx[:, 0])
-    static_error = np.sqrt(np.sum((static_pred.cpu().numpy() - static_gt.cpu().numpy()) ** 2, 2) + 1e-20)  
-    if static_error.size == 0:
-        static_epe =0
-    else: static_epe = np.mean(static_error)/10
     
     pc = pc.cpu().numpy()
     pred = pred.cpu().numpy()
-    labels = labels.cpu().numpy()
-    error = np.sqrt(np.sum((pred - labels) ** 2, 2) + 1e-20)/10
-    error_x = np.abs(pred[0, :, 0] - labels[0, :, 0])
-    error_y = np.abs(pred[0, :, 1] - labels[0, :, 1])
-    error_z = np.abs(pred[0, :, 2] - labels[0, :, 2])
-    gtflow_len = np.sqrt(np.sum(labels * labels, 2) + 1e-20)
+    gt_f = gt_f.cpu().numpy()
+    error = np.sqrt(np.sum((pred - gt_f) ** 2, 2) + 1e-20)/10
+    gtflow_len = np.sqrt(np.sum(gt_f * gt_f, 2) + 1e-20)
 
     ## compute traditional metric for scene flow
     epe = np.mean(error)
-    epe_x = np.mean(error_x)
-    epe_y = np.mean(error_y)
-    epe_z = np.mean(error_z)
 
-    accs = np.sum(np.logical_or((error <= 0.05), (error / gtflow_len <= 0.05))) / (np.size(pred, 0) * np.size(pred, 1)) #
-    accr = np.sum(np.logical_or((error <= 0.10), (error / gtflow_len <= 0.10))) / (np.size(pred, 0) * np.size(pred, 1)) #0.01
     
-    accss = np.sum(np.logical_or((error <= 0.025), (error / gtflow_len <= 0.025))) / (np.size(pred, 0) * np.size(pred, 1))
-    accrr = np.sum(np.logical_or((error <= 0.05), (error / gtflow_len <= 0.05))) / (np.size(pred, 0) * np.size(pred, 1))
+    accs = np.sum(np.logical_or((error <= 0.025), (error / gtflow_len <= 0.025))) / (np.size(pred, 0) * np.size(pred, 1))
+    accr = np.sum(np.logical_or((error <= 0.05), (error / gtflow_len <= 0.05))) / (np.size(pred, 0) * np.size(pred, 1))
 
-    sf_metric = {'epe': epe, 'move_epe': move_epe, 'static_epe': static_epe, 'accs': accs, 'accr': accr, 'accss': accss, 'accrr': accrr,\
-                 'epe_x': epe_x, 'epe_y': epe_y, 'epe_z': epe_z}
+    sf_metric = {'epe': epe, 'accs': accs, 'accr': accr}
 
     return sf_metric
 

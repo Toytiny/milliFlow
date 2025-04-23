@@ -25,6 +25,7 @@ This work presents **milliFlow**, a scene flow estimation module to provide an a
  - [2024-07-01] Our paper is accepted by 🎉[ECCV 2024](https://eccv2024.ecva.net/).
  - [2024-09-12] Our presentation video and poster is online. Please check them out 👉[video](https://youtu.be/fa91EeueGHA) | [poster](./src/poster_eccv24_milliFlow.pdf) 
 
+<<<<<<< HEAD
 ## 📝 Abstract
 Human motion sensing plays a crucial role in smart systems
 for decision-making, user interaction, and personalized services. Extensive research that has been conducted is predominantly based on cameras, whose intrusive nature limits their use in smart home applications.
@@ -41,6 +42,10 @@ You can download the dataset [here](https://drive.google.com/file/d/19U-tXv505Cv
 
 ## 🚀 Getting Started
 To find out how to run our scodes, please see our intructions in GETTING_STARTED, which will be made by the end of October. Stay tuned for update! 
+=======
+## Getting Started
+To find out how to run our scodes, please see our intructions in [GETTING_STARTED](./src/GETTING_STARTED.md)
+>>>>>>> fa5faea51374a363a8b204e14b5afeabc886d74c
    
 ## 🔗 Citation
 When using the code, model, or dataset, please cite the following paper:

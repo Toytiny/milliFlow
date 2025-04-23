@@ -1,0 +1,46 @@
+exp_name: mmflow
+model: mmflow 
+
+## training 
+num_points: 128
+batch_size: 64 #16 32
+val_batch_size: 32 #8 16
+epochs: 40 #60
+lr: 0.001 #0.001
+decay_epochs: 1
+decay_rate: 0.9
+
+## device
+cuda_device: '0'
+no_cuda: False
+seed: 1234
+num_workers: 8
+
+## dataset
+eval: False
+eval_split: val
+val_split: test
+dataset: ClipDataset # ClipDataset
+train_set: train # train_anno train_large train_small
+extra_percent: 0.4
+dataset_path: /root/milliflow/data/data/
+aug: False
+vis: False
+save_res: True
+
+## RaFlow method parameter
+rigid_thres: 0.15
+
+## CMFlow method parameter
+vr_thres: 0.3 # 0.3
+stat_thres: 0.5
+
+## GRU parameter
+mini_clip_len: 5
+update_len: 5
+
+## checkpoint
+load_checkpoint: False
+model_path: '' #'/home/luozhen/RadarFlow/checkpoints/mmflow/models/model.best.t7'
+joint_train: False
+

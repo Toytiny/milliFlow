@@ -48,7 +48,6 @@ class ClipDataset(Dataset):
                             mini_sample.append(os.path.join(clip_path, samples[st_idx + j]))
                             self.samples.append(os.path.join(clip_path, samples[st_idx + j]))
                         self.mini_samples.append(mini_sample)
-
         """
         if not self.eval:
             self.textio.cprint(self.partition + ' : ' + str(len(self.mini_samples)) + ' mini_clips')
@@ -65,13 +64,11 @@ class ClipDataset(Dataset):
 
             return self.get_sample_item(data)
 
-    def get_sample_item(self, data, mini_sample):
+    def get_sample_item(self, data):
 
         data_1 = np.array(data["pc1"]).astype('float32')
         data_2 = np.array(data["pc2"]).astype('float32')
 
-        if len(data_1.shape) !=2:
-            print(mini_sample)
         # read input data and features
         pos_1 = data_1[:, 0:3]
         pos_2 = data_2[:, 0:3]
@@ -79,6 +76,10 @@ class ClipDataset(Dataset):
         feature_2 = data_2[:, 3:4]
         labels = np.array(data["gt"]).astype('float32')
         pos_labels = data_1[:, 4:5]
+
+        if self.partition == "train":
+            mask = data_1[:, 5:6]
+        else: mask = np.zeros((data_1.shape[0],1))
 
         feature_1 = np.insert(feature_1, 0, feature_1[:, 0], axis=1)
         feature_1 = np.insert(feature_1, 0, feature_1[:, 0], axis=1)
@@ -112,8 +113,9 @@ class ClipDataset(Dataset):
             feature_2 = feature_2[sample_idx2, :]
             labels = labels[sample_idx1, :]
             pos_labels = pos_labels[sample_idx1, :]
+            mask = mask[sample_idx1, :]
 
-        return pos_1, pos_2, feature_1, feature_2, labels
+        return pos_1, pos_2, feature_1, feature_2, labels, mask
 
     def get_clip_item(self, index):
         mini_sample = self.mini_samples[index]
@@ -123,12 +125,13 @@ class ClipDataset(Dataset):
         mini_feat_2 = np.zeros((self.mini_clip_len, self.npoints, 3)).astype('float32')
         mini_labels = np.zeros((self.mini_clip_len, self.npoints, 3)).astype('float32')
         mini_pos_labels = np.zeros((self.mini_clip_len, self.npoints, 3)).astype('float32')
+        mini_mask = np.zeros((self.mini_clip_len, self.npoints, 1)).astype('float32')
 
         for i in range(0, len(mini_sample)):
             with open(mini_sample[i], 'rb') as fp:
                 data = ujson.load(fp)
 
-            pos_1, pos_2, feature_1, feature_2, labels = self.get_sample_item(data,mini_sample)
+            pos_1, pos_2, feature_1, feature_2, labels, mask = self.get_sample_item(data,mini_sample)
 
             # accumulate sample information
             mini_pos_1[i] = pos_1
@@ -136,8 +139,9 @@ class ClipDataset(Dataset):
             mini_feat_1[i] = feature_1
             mini_feat_2[i] = feature_2
             mini_labels[i] = labels
+            mini_mask[i] = mask
 
-        return mini_pos_1, mini_pos_2, mini_feat_1, mini_feat_2, mini_labels
+        return mini_pos_1, mini_pos_2, mini_feat_1, mini_feat_2, mini_labels, mini_mask
 
     def __len__(self):
         if not self.eval:

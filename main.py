@@ -164,7 +164,6 @@ def test(args, net, test_loader, textio, pre_net=None):
         sf_metric, epe_xyz = test_one_epoch_seq_track(args, net, test_loader, textio)
         for metric in sf_metric:
             textio.cprint('###The mean {}: {}###'.format(metric, sf_metric[metric]))
-
         plot_epe_component(epe_xyz,args)
     else:
         if args.dataset == 'ClipDataset':
@@ -175,12 +174,8 @@ def test(args, net, test_loader, textio, pre_net=None):
         for metric in sf_metric:
             textio.cprint('###The mean {}: {}###'.format(metric, sf_metric[metric]))
 
-        plot_epe_component(epe_xyz,args)
+        #plot_epe_component(epe_xyz,args)
         #textio.cprint('###The mean {}: ###'.format(epe_xyz))
-
-    ## plot the vehicle trajectory 
-    #plot_trajectory(gt_trans,pre_trans,args)
-    #plot_comparison(gt_trans,pre_trans,args)
 
     
 def test_vis(args, net, test_loader, textio):
@@ -419,6 +414,8 @@ def main(param_name='train', param_value=False):
         train_loader = DataLoader(train_set, num_workers=args.num_workers, batch_size=args.batch_size, shuffle=True, drop_last=True)
         val_loader = DataLoader(val_set, num_workers=args.num_workers, batch_size=args.val_batch_size, shuffle=False, drop_last=False)
 
+    if args.eval:
+        args.clips_info = test_set.clips_info
 
     # init the network (load or from scratch)
     net = init_model(args)
