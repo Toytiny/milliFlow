@@ -20,18 +20,29 @@ This work presents **milliFlow**, a scene flow estimation module to provide an a
 [[arXiv]](https://arxiv.org/pdf/2306.17010) [[video]](https://youtu.be/fa91EeueGHA) [[poster]](./src/poster_eccv24_milliFlow.pdf) 
 
 
-## News
+## 🔥 News
  - [2024-03-15] Our preprint paper is available on 👉[arXiv](https://arxiv.org/pdf/2306.17010).
  - [2024-07-01] Our paper is accepted by 🎉[ECCV 2024](https://eccv2024.ecva.net/).
  - [2024-09-12] Our presentation video and poster is online. Please check them out 👉[video](https://youtu.be/fa91EeueGHA) | [poster](./src/poster_eccv24_milliFlow.pdf) 
 
-## Data
+## 📝 Abstract
+Human motion sensing plays a crucial role in smart systems
+for decision-making, user interaction, and personalized services. Extensive research that has been conducted is predominantly based on cameras, whose intrusive nature limits their use in smart home applications.
+To address this, mmWave radars have gained popularity due to their
+privacy-friendly features. In this work, we propose milliFlow, a novel
+deep learning approach to estimate scene flow as complementary motion information for mmWave point cloud, serving as an intermediate
+level of features and directly benefiting downstream human motion sensing tasks. Experimental results demonstrate the superior performance of
+our method when compared with the competing approaches. Furthermore, by incorporating scene flow information, we achieve remarkable
+improvements in human activity recognition and human parsing and
+support human body part tracking. 
+
+## 📊 Data
 You can download the dataset [here](https://drive.google.com/file/d/19U-tXv505CvnaQ0EFR8ZqH-TatEiHe8P/view?usp=sharing).
 
-## Getting Started
+## 🚀 Getting Started
 To find out how to run our scodes, please see our intructions in GETTING_STARTED, which will be made by the end of October. Stay tuned for update! 
    
-## Citation
+## 🔗 Citation
 When using the code, model, or dataset, please cite the following paper:
 
 
@@ -41,11 +52,12 @@ When using the code, model, or dataset, please cite the following paper:
     title     = {milliFlow: Scene Flow Estimation on mmWave Radar Point Cloud for Human Motion Sensing},
     booktitle = {Proceedings of the European Conference on Computer Vision  (ECCV)},
     year      = {2024},
-    pages     = {1-14}
+    pages     = {202-221},
+    organization = {Springer}
 }
 ```
 
-## License
+## 📄 License
 
 ### Code and Model License
 
