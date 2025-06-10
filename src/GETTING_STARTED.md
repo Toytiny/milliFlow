@@ -16,7 +16,7 @@
 
 ## 0. Data Download
 
-First of all, please download the [dataset](https://drive.google.com/file/d/1cfIdR63Plt546mOiHxGMlgg2cgy4a_HL/view?usp=drive_link). The alternative download link is [dataset](https://drive.google.com/drive/folders/1cEmTAHBNy60xxnhOk2RR4MiTa7WhA8VE?usp=sharing). 
+First of all, please download the  [dataset](https://drive.google.com/file/d/1cfIdR63Plt546mOiHxGMlgg2cgy4a_HL/view?usp=drive_link). 
 
 ## 1. Installation
 
