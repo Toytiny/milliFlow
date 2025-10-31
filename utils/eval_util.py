@@ -131,7 +131,7 @@ def eval_scene_flow(pc, pred, labels, args):
     pc = pc.cpu().numpy()
     pred = pred.cpu().numpy()
     gt_f = gt_f.cpu().numpy()
-    error = np.sqrt(np.sum((pred - gt_f) ** 2, 2) + 1e-20)/10
+    error = np.sqrt(np.sum((pred - gt_f) ** 2, 2) + 1e-20)
     gtflow_len = np.sqrt(np.sum(gt_f * gt_f, 2) + 1e-20)
 
     ## compute traditional metric for scene flow
