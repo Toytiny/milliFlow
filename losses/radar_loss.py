@@ -26,8 +26,8 @@ def mmflowLoss(pred_f, gt, pc, mask):
 
     gt_f = gt.to(torch.float64)-pc.to(torch.float64)
     dis = torch.norm(gt_f, dim=2)
-    move_idx = torch.nonzero((dis>0.05), as_tuple=False)
-    static_idx = torch.nonzero((dis<=0.05), as_tuple=False)
+    move_idx = torch.nonzero((dis>0.10), as_tuple=False)
+    static_idx = torch.nonzero((dis<=0.10), as_tuple=False)
     
     move_pred = torch.index_select(pred_f, dim=1, index = move_idx[:, 0])
     move_gt = torch.index_select(gt_f, dim=1, index = move_idx[:, 0])
@@ -48,5 +48,6 @@ def mmflowLoss(pred_f, gt, pc, mask):
     items = {
         'Loss': loss.item(),
     }
+
 
     return loss, items
